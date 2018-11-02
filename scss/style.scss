@@ -1,0 +1,85 @@
+@import"common.scss";
+@import"_minix.scss";
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+.wrap {
+    @include wh(100%, 100%);
+    @include box-flex;
+    @include direction;
+    overflow: hidden;
+}
+
+header {
+    @include wh(100%, pxTorem(44px));
+    @include box-flex;
+    @include align;
+    @include justify(space-between);
+    padding: 0 pxTorem(10px);
+    flex-shrink: 0;
+    @include sizing;
+    i {
+        font-size: pxTorem(18px)!important;
+    }
+    .active {
+        color: pink;
+    }
+}
+
+section {
+    flex: 1;
+    overflow-y: auto;
+    .banner {
+        text-align: center;
+        @include box-flex;
+        overflow: hidden;
+        flex-shrink: 0;
+        @include justify(center);
+        img {
+            @include wh(70%, pxTorem(100px));
+            margin: 0 pxTorem(5px);
+            flex-shrink: 0;
+        }
+    }
+    .centent {
+        width: 100%;
+        padding: 0 pxTorem(10px);
+        flex-shrink: 0;
+        @include sizing;
+        dl {
+            @include wh(100%, pxTorem(80px));
+            @include box-flex;
+            @include justify(space-around);
+            @include align;
+            @include setBottomLine;
+            dt {
+                width: 70%;
+                p {
+                    font-size: pxTorem(18px);
+                }
+                span {
+                    display: inline-block;
+                    margin-top: pxTorem(5px);
+                    color: #ccc;
+                    margin-left: pxTorem(5px);
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @include wh(100%, pxTorem(60px));
+    @include box-flex;
+    @include align;
+    @include justify(space-between);
+    padding: 0 pxTorem(10px);
+    @include sizing;
+    @include setTopLine;
+    flex-shrink: 0;
+    dl {
+        text-align: center;
+    }
+}
